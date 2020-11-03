@@ -12,3 +12,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+// gradle 设置编译编码为utf-8
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
