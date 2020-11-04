@@ -1,6 +1,8 @@
 package top.learningwang.factory.simplefactory;
 
-import java.util.Optional;
+import top.learningwang.factory.common.bean.CountryMusic;
+import top.learningwang.factory.common.bean.Music;
+import top.learningwang.factory.common.bean.RapMusic;
 
 /**
  * @author wangjingbiao

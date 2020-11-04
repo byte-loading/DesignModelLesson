@@ -1,6 +1,9 @@
 package top.learningwang.factory.simplefactory;
 
 import org.junit.Test;
+import top.learningwang.factory.common.bean.CountryMusic;
+import top.learningwang.factory.common.bean.Music;
+import top.learningwang.factory.common.bean.RapMusic;
 
 
 /**

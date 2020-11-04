@@ -1,4 +1,4 @@
-package top.learningwang.factory.simplefactory;
+package top.learningwang.factory.common.bean;
 
 /**
  * @author wangjingbiao
