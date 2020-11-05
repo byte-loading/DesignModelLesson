@@ -3,7 +3,7 @@ package top.learningwang.factory.common.bean;
 /**
  * @author wangjingbiao
  * @date 2020/11/03 23:49
- * desc
+ * rap音乐
  */
 public class RapMusic extends Music {
     @Override
