@@ -1,4 +1,4 @@
-package top.learningwang.lazy;
+package top.learningwang.singleton;
 
 
 import org.junit.After;

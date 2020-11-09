@@ -19,4 +19,18 @@ public class HungrySingleton implements Serializable {
     public static HungrySingleton getInstance() {
         return hungrySingleton;
     }
+
+    /**
+     * 重写该方法，能保证反序列化得到的也是同一个bean
+     * 原理：
+     * ObjectInputStream下，会判断是否有readResolve方法，有的话，会返回该方法的返回值
+     *  if (obj != null &&
+     *             handles.lookupException(passHandle) == null &&
+     *             desc.hasReadResolveMethod()){
+     *                  Object rep = desc.invokeReadResolve(obj);
+     *             }
+     */
+    public Object readResolve(){
+        return hungrySingleton;
+    }
 }
