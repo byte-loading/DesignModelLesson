@@ -5,13 +5,18 @@ plugins {
 group 'top.learningwang'
 version '1.0-SNAPSHOT'
 
+// 切换阿里仓库
 repositories {
-    mavenCentral()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
+// 加载依赖
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
 }
+
 // gradle 设置编译编码为utf-8
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
