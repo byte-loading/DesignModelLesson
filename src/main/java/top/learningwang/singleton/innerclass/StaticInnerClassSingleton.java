@@ -15,7 +15,10 @@ public class StaticInnerClassSingleton {
     }
 
     private StaticInnerClassSingleton() {
-
+        if (InnerClass.staticInnerClassSingleton != null) {
+            // 避免反射破坏单例
+            throw new RuntimeException("单例模式，不允许反射调用");
+        }
     }
 
     public static StaticInnerClassSingleton getInstance() {

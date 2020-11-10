@@ -14,6 +14,10 @@ public class HungrySingleton implements Serializable {
     private final static HungrySingleton hungrySingleton = new HungrySingleton();
 
     private HungrySingleton() {
+        if (hungrySingleton != null) {
+            // 避免反射破坏单例模式，类加载时已经初始化好了，直接在构造方法中判断即可
+            throw new RuntimeException("单例构造器禁止反射调用");
+        }
     }
 
     public static HungrySingleton getInstance() {
@@ -24,13 +28,13 @@ public class HungrySingleton implements Serializable {
      * 重写该方法，能保证反序列化得到的也是同一个bean
      * 原理：
      * ObjectInputStream下，会判断是否有readResolve方法，有的话，会返回该方法的返回值
-     *  if (obj != null &&
-     *             handles.lookupException(passHandle) == null &&
-     *             desc.hasReadResolveMethod()){
-     *                  Object rep = desc.invokeReadResolve(obj);
-     *             }
+     * if (obj != null &&
+     * handles.lookupException(passHandle) == null &&
+     * desc.hasReadResolveMethod()){
+     * Object rep = desc.invokeReadResolve(obj);
+     * }
      */
-    public Object readResolve(){
+    public Object readResolve() {
         return hungrySingleton;
     }
 }
